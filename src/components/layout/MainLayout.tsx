@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import {FC, ReactNode} from "react"
+import NavBar from '../ui/NavBar';
+
+
 
 interface Props {
     title:string;
@@ -16,10 +19,8 @@ const MainLayout: FC<Props> = ({title, pageDescription, children}) => {
             <meta name="og:title" content={title} />
             <meta name="og:description" content={pageDescription} />
         </Head>
-        <nav>
-
-        </nav>
-        <main>
+        <NavBar />
+        <main className='fondo'>
             {children}
         </main>
         <footer>
