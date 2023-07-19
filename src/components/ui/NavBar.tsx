@@ -7,24 +7,39 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const NavBar = () => { 
+const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" color='secondary'>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color="primary"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Box flex={1}/>
+          <Box display={'flex'} justifyContent={'center'}>
+            <Button variant="text" sx={{ml: 3 }}>
+              <Typography variant="h6" fontSize={17}  component="h2" sx={{textTransform:"capitalize" }} color="primary">
+                Coronas
+              </Typography>
+            </Button>
+            <Button variant="text" sx={{ml: 3 }}>
+              <Typography variant="h6" fontSize={17}  component="h2" sx={{textTransform:"capitalize" }} color="primary">
+                Bouquets
+              </Typography>
+            </Button>
+            <Button variant="text" sx={{ml: 3 }}>
+              <Typography variant="h6" fontSize={17}  component="h2" sx={{textTransform:"capitalize" }} color="primary">
+                Arreglos florales
+              </Typography>
+            </Button>
+          </Box>
+          <Box flex={1}/>
         </Toolbar>
       </AppBar>
     </Box>
