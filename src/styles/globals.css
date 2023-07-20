@@ -13,3 +13,11 @@
     background-position: center;
     height: 650px;
 }
+
+.img {
+    height: 50vh;
+    background-image: url("../images/port.jpg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    border: solid black;
+}
