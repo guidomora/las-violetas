@@ -14,10 +14,8 @@
     height: 650px;
 }
 
-.img {
-    height: 50vh;
-    background-image: url("../images/port.jpg");
-    background-size:contain;
+/* .img {
+    background-image: url("../images/port.png");
+    background-size:cover;
     background-repeat: no-repeat;
-    border: solid black;
-}
+} */

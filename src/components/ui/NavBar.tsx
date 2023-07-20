@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const NavBar = () => {
   return (
     <Box >
-      <AppBar position="static" color='secondary' sx={{ borderRadius: 2 }}>
+      <AppBar position="static" color='secondary'>
         <Toolbar>
           <Box>
             <IconButton

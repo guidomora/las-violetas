@@ -1,12 +1,13 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import port from "../images/port.jpg"
+import Image from 'next/image'
+import portada from "../../../public/images/port.png"
 
 
 const Portada = () => {
   return (
-    <Grid className='img' >
-
+    <Grid>
+      <Image src={portada} alt={''} style={{width:"100vw", height:700}}/>
     </Grid>
   )
 }
