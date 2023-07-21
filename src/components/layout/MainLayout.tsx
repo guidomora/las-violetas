@@ -2,6 +2,8 @@ import Head from 'next/head'
 import {FC, ReactNode} from "react"
 import NavBar from '../ui/NavBar';
 import Portada from '../ui/Portada';
+import Footer from '../ui/Footer';
+import SideBar from '../ui/SideBar';
 
 
 
@@ -21,12 +23,13 @@ const MainLayout: FC<Props> = ({title, pageDescription, children}) => {
             <meta name="og:description" content={pageDescription} />
         </Head>
         <NavBar />
+        <SideBar />
         <Portada />
         <main>
             {children}
         </main>
         <footer>
-            
+            <Footer />
         </footer>
         </>
     )
