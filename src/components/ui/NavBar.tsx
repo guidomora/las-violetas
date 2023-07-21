@@ -11,35 +11,20 @@ const NavBar = () => {
   return (
     <Box >
       <AppBar position="static" color='secondary'>
-        <Toolbar>
+        <Toolbar sx={{ display: 'flex', alignItems: 'center' }}>
           <Box>
-            <IconButton
-              size="large"
-              edge="start"
+            <Button
+              variant='outlined'
               color="primary"
-              aria-label="menu"
-              sx={{ mr: 2 }}
+              sx={{ textTransform: "capitalize" }}
             >
-              <MenuIcon />
-            </IconButton>
+              <MenuIcon sx={{ mr: 1 }} />
+              Menu
+            </Button>
           </Box>
           <Box flex={1} />
           <Box display={'flex'} justifyContent={'center'}>
-            <Button variant="text" sx={{ ml: 3 }}>
-              <Typography variant="h6" fontSize={17} component="h2" sx={{ textTransform: "capitalize" }} color="primary">
-                Coronas
-              </Typography>
-            </Button>
-            <Button variant="text" sx={{ ml: 3 }}>
-              <Typography variant="h6" fontSize={17} component="h2" sx={{ textTransform: "capitalize" }} color="primary">
-                Bouquets
-              </Typography>
-            </Button>
-            <Button variant="text" sx={{ ml: 3 }}>
-              <Typography variant="h6" fontSize={17} component="h2" sx={{ textTransform: "capitalize" }} color="primary">
-                Arreglos florales
-              </Typography>
-            </Button>
+            <Typography component="h1" variant='h4' color="primary">Las Violetas</Typography>
           </Box>
           <Box flex={1} />
           <Box>
