@@ -1,15 +1,21 @@
-import { Drawer, Box, Typography, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
-import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { Drawer, Box, Typography, List, ListItem, ListItemText, Divider, Button } from '@mui/material';
 import { useContext } from 'react';
-import { NavContext } from '@/context/NavContext';
+import { NavContext } from '@/context/Nav/NavContext';
+import { useRouter } from 'next/router';
+
+
 
 
 
 
 const SideBar = () => {
     const { sideMenuOpen, closeSideMenu } = useContext(NavContext)
+    const router = useRouter()
 
+    const NavigateTo = (url: string) => {
+        router.push(url)
+        closeSideMenu()
+    }
 
     return (
         <Drawer
@@ -17,40 +23,54 @@ const SideBar = () => {
             open={sideMenuOpen}
             onClose={closeSideMenu}
         >
-            <Box sx={{ width: 250}}>
+            <Box sx={{ width: 250 }}>
 
             </Box>
-            <Box sx={{ padding: "5px, 10px", backgroundColor: "secondary.main" }}>
-                <Typography variant='h4' sx={{color: "primary.main"}}> Menu</Typography>
+            <Box sx={{ pl: 2, backgroundColor: "secondary.main" }}>
+                <Typography variant='h4' sx={{ color: "primary.main" }}> Menu</Typography>
             </Box>
-            <List sx={{backgroundColor: "secondary.main"}}>
-            <ListItem component={"button"} 
-                sx={{
-                    backgroundColor: "inherit",
-                    border: "none", 
-                    cursor: "pointer",
-                    color: "primary.main"
-                }}>
+            <List sx={{ backgroundColor: "secondary.main" }}>
+                <ListItem component={"button"}
+                    onClick={() => NavigateTo("/")}
+                    sx={{
+                        backgroundColor: "inherit",
+                        border: "none",
+                        cursor: "pointer",
+                        color: "primary.main"
+                    }}>
+                    <ListItemText>Página principal</ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem component={"button"}
+                    onClick={() => NavigateTo("/categorias/coronas")}
+                    sx={{
+                        backgroundColor: "inherit",
+                        border: "none",
+                        cursor: "pointer",
+                        color: "primary.main"
+                    }}>
                     <ListItemText>Coronas</ListItemText>
                 </ListItem>
                 <Divider />
-                <ListItem component={"button"} 
-                sx={{
-                    backgroundColor: "inherit",
-                    border: "none", 
-                    cursor: "pointer",
-                    color: "primary.main"
-                }}>
+                <ListItem component={"button"}
+                    onClick={() => NavigateTo("/categorias/bouquets")}
+                    sx={{
+                        backgroundColor: "inherit",
+                        border: "none",
+                        cursor: "pointer",
+                        color: "primary.main"
+                    }}>
                     <ListItemText>Bouquets</ListItemText>
                 </ListItem>
                 <Divider />
-                <ListItem component={"button"} 
-                sx={{
-                    backgroundColor: "inherit",
-                    border: "none", 
-                    cursor: "pointer",
-                    color: "primary.main"
-                }}>
+                <ListItem component={"button"}
+                    onClick={() => NavigateTo("/categorias/arreglos")}
+                    sx={{
+                        backgroundColor: "inherit",
+                        border: "none",
+                        cursor: "pointer",
+                        color: "primary.main"
+                    }}>
                     <ListItemText>Otros Arreglos</ListItemText>
                 </ListItem>
             </List>

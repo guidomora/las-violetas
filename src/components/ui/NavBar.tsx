@@ -6,10 +6,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useContext } from 'react';
-import { NavContext } from '@/context/NavContext';
+import { NavContext } from '@/context/Nav/NavContext';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import NextLink from 'next/link';
+import { Link } from '@mui/material';
 
 const NavBar = () => {
-  const {openSideMenu} = useContext(NavContext)
+  const { openSideMenu } = useContext(NavContext)
 
 
   return (
@@ -33,7 +36,14 @@ const NavBar = () => {
           </Box>
           <Box flex={1} />
           <Box>
-            <Typography>wpp</Typography>
+            <Button>
+              <NextLink legacyBehavior href={"https://wa.me/541169402036"} passHref>
+                <Link target="blank" sx={{display: 'flex', alignItems: 'center'}}>
+                  <WhatsAppIcon fontSize="large" color='primary'/>
+                </Link>
+              </NextLink>
+            </Button>
+
           </Box>
         </Toolbar>
       </AppBar>
