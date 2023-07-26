@@ -52,11 +52,11 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
     
     const { products } = useContext(DbContext)
-    const slug = products.map(product => product.slug)
+     const slugs = products.map(product => product.slug)
     return {
-        paths: slug.filter(slug => ({
-            params: slug === slug
-        })),
+        paths: slugs.map((slug) => ({
+            params: { slug }
+          })),
         fallback: "blocking"
     }
 }

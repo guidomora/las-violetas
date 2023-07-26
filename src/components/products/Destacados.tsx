@@ -6,6 +6,8 @@ import DbContext from '@/context/db/DbContext';
 
 const Destacados = () => {
     const { products } = useContext(DbContext)
+    console.log(products.find(product => product.slug === "corona_1"));
+    
 
     return (
         <Grid mt={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
