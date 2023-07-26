@@ -6,7 +6,7 @@ import NextLink from "next/link"
 
 const Contacto = () => {
   return (
-    <Grid mt={3} mb={3} display={'flex'} justifyContent={"center"}>
+    <Grid mt={3} pb={3} display={'flex'} justifyContent={"center"}>
       <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
         <Typography component="h5" variant='h4' m={1} color="primary">Contacto</Typography>
         <Box display={'flex'} alignItems={'center'} m={1}>

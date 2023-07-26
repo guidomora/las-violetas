@@ -25,7 +25,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children }) => {
             </Head>
             <NavBar />
             <SideBar />
-            <main>
+            <main style={{backgroundColor: "#f8f9fa"}}>
                 {children}
             </main>
             <Box width={"100%"} position={'fixed'} zIndex={99} bottom={20} display={'flex'} justifyContent={'flex-end'}>

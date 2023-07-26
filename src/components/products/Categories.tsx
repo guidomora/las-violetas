@@ -21,7 +21,7 @@ const Categories = ({categoria, title}:Props) => {
     
     return (
         <Grid>
-         <Box display={'flex'} justifyContent={'center'} mt={8}>
+         <Box display={'flex'} justifyContent={'center'} pt={8}>
           <Typography color="primary" component="h1" variant='h1' fontSize={37}>{title}</Typography>
         </Box>
         <Grid mt={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
