@@ -10,18 +10,16 @@ import { GetStaticProps } from 'next'
 
 
 interface Props {
-    product: Products
-    slug:string
+    slug:Products
 }
 
-const ProductPage: NextPage<Props> = ({ product, slug }) => {
+const ProductPage: NextPage<Props> = ({ slug }) => {
     const { products } = useContext(DbContext)
-    const categories = products.filter(product => product.slug === `${slug}`)
-    console.log(categories);
+    const product = products.filter(product => product.slug === `${slug}`)
     
 
     return (
-        <MainLayout title={`${product}`} pageDescription={''} imageFullUrl={''}>
+        <MainLayout title={``} pageDescription={''} imageFullUrl={''}>
             <Grid mt={7} display={'flex'} flexDirection={'row'} p={5}>
                 <Card>
                     <CardMedia
@@ -51,7 +49,8 @@ const ProductPage: NextPage<Props> = ({ product, slug }) => {
 }
 
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async (ctx) => {
+    
     const { products } = useContext(DbContext)
     const slug = products.map(product => product.slug)
     return {
@@ -66,7 +65,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { slug } = params as { slug: string }  // your fetch function here 
+    const { slug } = params as { slug: string }  
 
     if (!slug) {
         return {
@@ -75,9 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 permanent: false
             }
         }
-    }
-
-    
+    }  
     return {
         props: {
             slug
