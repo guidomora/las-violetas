@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode, useReducer } from "react";
+import { FC, PropsWithChildren, ReactNode, useReducer, useEffect } from "react";
 import DbContext from './DbContext';
 import { dbReducer } from "./dbReducer";
 import { collection, getDocs } from "firebase/firestore";
@@ -17,7 +17,8 @@ const Db_INITIAL_STATE: DbState = {
             precio: "",
             imagen: "",
             descripcion: "",
-            categoria: ""
+            categoria: "",
+            slug:""
         }
     ]
 
@@ -40,12 +41,17 @@ const DbProvider: FC<PropsWithChildren> = ({ children }) => {
                 imagen: productData.imagen,
                 descripcion: productData.descripcion,
                 categoria: productData.categoria,
+                slug:productData.slug
             };
-            data.push(product);
+            data.push(product);   
         });
         dispatch({ type: "[Products] get products", payload: data })
     }
 
+    useEffect(() => {
+        getData()
+    }, [])
+    
 
     return (
         <DbContext.Provider value={{

@@ -4,4 +4,5 @@ export interface Products {
     imagen:string;
     descripcion?:string;
     categoria:string;
+    slug:string
 }

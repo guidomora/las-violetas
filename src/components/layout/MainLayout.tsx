@@ -35,11 +35,10 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children }) => {
                     </Link>
                 </NextLink>
             </Box>
-            <footer>
+            <footer style={{ bottom: 0, left: 0, right: 0}}>
                 <Footer />
             </footer>
         </>
     )
 }
-
 export default MainLayout

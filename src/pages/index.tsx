@@ -10,6 +10,8 @@ import Contacto from '@/components/ui/Contacto'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  
+
   return (
     <>
       <MainLayout title={'Floreria Las Violetas'} pageDescription={''} imageFullUrl={''}>

@@ -1,16 +1,32 @@
 import React from 'react'
-import { Card, CardActionArea, CardMedia, Chip, Grid, Link, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography } from '@mui/material';
 import NextLink from "next/link"
 import { useContext } from 'react';
 import DbContext from '@/context/db/DbContext';
 
-const Destacados = () => {
+
+interface Props {
+    categoria: string
+    title:string
+}
+
+
+const Categories = ({categoria, title}:Props) => {
     const { products } = useContext(DbContext)
 
+
+    const categories = products.filter(product => product.categoria === `${categoria}`)
+
+    
+    
     return (
+        <Grid>
+         <Box display={'flex'} justifyContent={'center'} mt={8}>
+          <Typography color="primary" component="h1" variant='h1' fontSize={37}>{title}</Typography>
+        </Box>
         <Grid mt={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
-            {products.map(product =>(
-                <Card sx={{ margin: 3 }} key={product.titulo} className='fadeIn'>
+            {categories.map(product =>(
+                <Card sx={{ margin: 3, maxHeight:450 }} key={product.titulo}>
                     <NextLink legacyBehavior href={""} passHref>
                         <Link sx={{ textDecoration: "none" }}>
                             <CardActionArea>
@@ -28,8 +44,10 @@ const Destacados = () => {
                     </NextLink>
                 </Card>
             ))}
+        </Grid>   
         </Grid>
+        
     )
 }
 
-export default Destacados
+export default Categories

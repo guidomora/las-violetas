@@ -1,3 +1,5 @@
+
+
 .fondo {
     background-color: #e9ecef;
 }
@@ -23,4 +25,8 @@
 
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
     background-color: #e9ecef;
+}
+
+main {
+    min-height: calc(100vh - 100px);
 }
