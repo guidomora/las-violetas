@@ -30,3 +30,18 @@
 main {
     min-height: calc(100vh - 100px);
 }
+
+
+.card-article {
+    transition: transform 0.2s ease;
+  }
+  
+
+  .card-article:hover {
+    transform: translateY(-17px);
+  }
+  
+  .portada {
+    width: "100vw";
+    height: 500px;
+  }

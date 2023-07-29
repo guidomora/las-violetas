@@ -1,13 +1,14 @@
-import { Box, Grid } from '@mui/material'
-import React from 'react'
-import Image from 'next/image'
-import portada from "../../../public/images/port.png"
+import { Box, Grid, CardMedia } from '@mui/material'
+
 
 
 const Portada = () => {
+
   return (
     <Grid>
-      <Image src={portada} alt={''} style={{width:"100%", height:500}}/>
+      <CardMedia component="img" image='https://firebasestorage.googleapis.com/v0/b/segunda-floreria.appspot.com/o/newPortada.png?alt=media&token=26361baf-5527-4eed-9864-eb86328a2989'
+      sx={{maxHeight:800}}>
+      </CardMedia>
     </Grid>
   )
 }

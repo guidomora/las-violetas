@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography, Chip } from '@mui/material';
+import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography, Chip, Button } from '@mui/material';
 import NextLink from "next/link"
 import { useContext } from 'react';
 import DbContext from '@/context/db/DbContext';
@@ -26,23 +26,22 @@ const Categories = ({ categoria, title }: Props) => {
             </Box>
             <Grid mt={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
                 {categories.map(product => (
-                    <Box key={product.slug}>
-                        <Typography textAlign="center" color="black" fontSize={22} fontWeight={600} m={2}>{product.titulo}</Typography>
-                        <Card sx={{ margin: 3 }} key={product.titulo} className='fadeIn'>
+                    <Box key={product.slug} ml={4} mr={4}>
+                        <Typography textAlign="center" color="black" fontSize={22} fontWeight={600}>{product.titulo}</Typography>
+                        <Card sx={{ margin: 3 }} className='card-article'>
                             <NextLink legacyBehavior href={`/product/${product.slug}`} passHref>
                                 <Link sx={{ textDecoration: "none" }}>
                                     <CardActionArea>
                                         <CardMedia
-                                            height={350}
-                                            sx={{ borderTopRightRadius: 7, borderTopLeftRadius: 7, minWidth: 300 }}
+                                            height={400}
+                                            sx={{ borderTopRightRadius: 7, borderTopLeftRadius: 7, minWidth: {xs:300, sm:350} }}
                                             component="img"
                                             image={product.imagen}
                                         >
                                         </CardMedia>
                                     </CardActionArea>
-                                    <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'}>
-                                        <Typography color="black" fontSize={22} fontWeight={600} m={2}>Detalle</Typography>
-                                        <Chip sx={{ fontSize: 20, m: 2 }} color='primary' label={`$ ${product.precio}`} />
+                                    <Box display={'flex'} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
+                                        <Button variant='outlined' sx={{fontSize:22, mt:2, mb:2 , textTransform:"none"}} >${product.precio}</Button>
                                     </Box>
                                 </Link>
                             </NextLink>
