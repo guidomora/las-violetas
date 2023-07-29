@@ -31,7 +31,7 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
         <MainLayout title={``} pageDescription={''} imageFullUrl={''}>
             <Grid pt={7}>
                 {product.map(producto =>
-                    <Button sx={{ml:5, textTransform:"none", fontSize:20}} variant="outlined">
+                    <Button sx={{ml:5, textTransform:"none", fontSize:20}} variant="outlined" key={producto.titulo}>
                         <NextLink passHref legacyBehavior href={`/categorias/${producto.categoria}`}>
                             <Link sx={{textDecoration:"none"}}>
                                 Volver a {`${producto.categoria}`}
