@@ -32,7 +32,8 @@ const NavBar = () => {
           </Box>
           <Box flex={1} />
           <Box display={'flex'} justifyContent={'center'}>
-            <Typography component="h1" variant='h4' color="primary">Las Violetas</Typography>
+            <Typography component="h1" variant='h4' color="primary"
+            sx={{fontSize:{xs:25, sm:35}}}>Las Violetas</Typography>
           </Box>
           <Box flex={1} />
           <Box>
