@@ -33,7 +33,7 @@ const NavBar = () => {
           <Box flex={1} />
           <Box display={'flex'} justifyContent={'center'}>
             <Typography component="h1" variant='h4' color="primary"
-            sx={{fontSize:{xs:25, sm:35}}}>Las Violetas</Typography>
+            sx={{fontSize:{xs:23, sm:35}}}>Las Violetas</Typography>
           </Box>
           <Box flex={1} />
           <Box>
@@ -44,7 +44,6 @@ const NavBar = () => {
                 </Link>
               </NextLink>
             </Button>
-
           </Box>
         </Toolbar>
       </AppBar>

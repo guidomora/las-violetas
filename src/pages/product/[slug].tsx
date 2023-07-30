@@ -29,7 +29,7 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
 
     return (
         <MainLayout title={``} pageDescription={''} imageFullUrl={''}>
-            <Grid pt={7}>
+            <Grid pt={9}>
                 {product.map(producto =>
                     <Button sx={{ml:5, textTransform:"none", fontSize:20}} variant="outlined" key={producto.titulo}>
                         <NextLink passHref legacyBehavior href={`/categorias/${producto.categoria}`}>
@@ -51,7 +51,7 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
                             >
                             </CardMedia>
                         </Card>
-                        <Box ml={4} maxWidth={600}>
+                        <Box ml={4} maxWidth={600} sx={{mt:{xs: 3, sm:3, md:0}}}>
                             <Box>
                                 <Typography component="h2" variant='h4' color="primary">{producto.titulo}</Typography>
                                 <Typography mt={3} fontSize={18}>{producto.descripcion}</Typography>
@@ -60,14 +60,14 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
                                 </Typography>
                                 <Typography fontSize={25} mt={3} fontWeight="bolder">${producto.precio}</Typography>
                             </Box>
-                            <Box mt={3} sx={{ display: 'flex', justifyContent: { xs: "center", sm: "center", md: "unset" } }}>
+                            <Box mt={3}>
                                 <NextLink passHref legacyBehavior href={"https://wa.me/541169402036"}>
                                     <Link display={'flex'} alignItems={'center'} sx={{ textDecoration: "none" }} target='blank'>
                                         <Button sx={{ textTransform: "capitalize", fontSize: 20 }} variant='outlined'>
-                                            <Typography component="h6" variant='h4' ml={1} sx={{ color: "black" }}>
+                                            <Typography component="h6" variant='h4' sx={{ color: "black" }}>
                                                 Contactar
                                             </Typography>
-                                            <WhatsAppIcon sx={{ ml: 1, color: "#39d05c", fontSize: 35 }} />
+                                            <WhatsAppIcon sx={{ ml: 3, color: "#39d05c", fontSize: 35 }} />
                                         </Button>
                                     </Link>
                                 </NextLink>

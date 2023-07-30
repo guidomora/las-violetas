@@ -20,7 +20,7 @@ export default function Home() {
           <Nosotros />
         </Box>
         <Box display={'flex'} justifyContent={'center'} mt={8}>
-          <Typography color="primary" component="h1" variant='h1' fontSize={37} textAlign="center">Nuestros productos destacados</Typography>
+          <Typography color="primary" component="h1" variant='h1' fontSize={37} textAlign="center">Todos nuestros productos</Typography>
         </Box>
         <Box display={'flex'} justifyContent={'center'} mt={2}>
           <Destacados />
