@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, CardActionArea, CardMedia, Chip, Grid, Link, Typography, Button } from '@mui/material';
 import NextLink from "next/link"
 import { useContext } from 'react';
 import DbContext from '@/context/db/DbContext';
 import Box from '@mui/material/Box';
+import Loader from '../ui/Loader';
 
 const Destacados = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const { products } = useContext(DbContext)
+
+    console.log(products.length);
+    
+    useEffect(() => {
+       products.length === 1 ? setIsLoading(true) : setIsLoading(false)
+    }, [products])
+    
 
 
     return (
-        <Grid mt={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
-            {products.map(product => (
+        <Grid pt={6} pb={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
+            {isLoading ? <Loader /> : 
+            products.map(product => (
                 <Box key={product.slug} sx={{ml:{xs: 1, sm:4}, mr:{xs: 1, sm:4}}}>
                 <Typography textAlign="center" color="black" fontSize={22} fontWeight={600}>{product.titulo}</Typography>
                 <Card sx={{ margin: 3 }} className='card-article'>
@@ -33,7 +43,9 @@ const Destacados = () => {
                     </NextLink>
                 </Card>
             </Box>
-            ))}
+            ))
+            }
+            
         </Grid>
     )
 }

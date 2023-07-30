@@ -16,8 +16,8 @@ const NavBar = () => {
 
 
   return (
-    <Box>
-      <AppBar position="static" color='secondary'>
+    <Box mb={2}>
+      <AppBar position="fixed" color='secondary'>
         <Toolbar sx={{ display: 'flex', alignItems: 'center' }}>
           <Box>
             <Button

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Card, CardActionArea, CardMedia, Grid, Link, Typography, Chip, Button } from '@mui/material';
 import NextLink from "next/link"
 import { useContext } from 'react';
 import DbContext from '@/context/db/DbContext';
+import Loader from '../ui/Loader';
 
 
 interface Props {
@@ -12,12 +13,15 @@ interface Props {
 
 
 const Categories = ({ categoria, title }: Props) => {
+    const [isLoading, setIsLoading] = useState(false)
     const { products } = useContext(DbContext)
 
 
     const categories = products.filter(product => product.categoria === `${categoria}`)
 
-
+    useEffect(() => {
+        products.length === 1 ? setIsLoading(true) : setIsLoading(false)
+     }, [products])
 
     return (
         <Grid>
@@ -25,7 +29,8 @@ const Categories = ({ categoria, title }: Props) => {
                 <Typography color="primary" component="h1" variant='h1' fontSize={37}>{title}</Typography>
             </Box>
             <Grid mt={6} display={'flex'} justifyContent={'space-evenly'} flexWrap="wrap">
-                {categories.map(product => (
+            {isLoading ? <Loader /> : 
+                categories.map(product => (
                     <Box key={product.slug} ml={4} mr={4}>
                         <Typography textAlign="center" color="black" fontSize={22} fontWeight={600}>{product.titulo}</Typography>
                         <Card sx={{ margin: 3 }} className='card-article'>
