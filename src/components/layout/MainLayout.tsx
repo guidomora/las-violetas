@@ -26,7 +26,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children, imageFullUrl 
                 <meta name="description" content={pageDescription} />
                 <meta name="og:title" content={title} />
                 <meta name="og:description" content={pageDescription} />
-                <meta property="og:image" content={`${imageFullUrl}`} />
+                <meta property="og:image" content={imageFullUrl} />
             </Head>
             <NavBar />
             <SideBar />
