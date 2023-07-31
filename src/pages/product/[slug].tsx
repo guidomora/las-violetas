@@ -15,6 +15,7 @@ import Slider from '@/components/ui/Slider/Slider'
 
 
 
+
 interface Props {
     slug: string
 }
@@ -24,11 +25,13 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
     const { products } = useContext(DbContext)
     const product = products.filter(product => product.slug == `${slug}`)
 
+    const title = product.map(title => title.titulo)
+    const description = product.map(description => description.descripcion)
+    const img = product.map(image => image.imagen)
     
 
-
     return (
-        <MainLayout title={``} pageDescription={''} imageFullUrl={''}>
+        <MainLayout title={`${title}`} pageDescription={`${description}`} imageFullUrl={`${img}`}>
             <Grid pt={9}>
                 {product.map(producto =>
                     <Button sx={{ml:5, textTransform:"none", fontSize:20}} variant="outlined" key={producto.titulo}>

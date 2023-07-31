@@ -15,17 +15,22 @@ interface Props {
     children: ReactNode
 }
 
-const MainLayout: FC<Props> = ({ title, pageDescription, children }) => {
+const MainLayout: FC<Props> = ({ title, pageDescription, children, imageFullUrl }) => {
     return (
         <>
             <Head>
+                <title>{title || "Las violetas"}</title>
+                <meta name='author' content='Guido Morabito' />
+                <meta name='description' content={` ${pageDescription}`} />
+                <meta name='keywords' content={`${title}, coronas, consolencias`} />
                 <meta name="description" content={pageDescription} />
                 <meta name="og:title" content={title} />
                 <meta name="og:description" content={pageDescription} />
+                <meta property="og:image" content={`${imageFullUrl}`} />
             </Head>
             <NavBar />
             <SideBar />
-            <main style={{backgroundColor: "#f8f9fa"}}>
+            <main style={{ backgroundColor: "#f8f9fa" }}>
                 {children}
             </main>
             <Box width={"100%"} position={'fixed'} zIndex={99} bottom={20} display={'flex'} justifyContent={'flex-end'}>
@@ -35,7 +40,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children }) => {
                     </Link>
                 </NextLink>
             </Box>
-            <footer style={{ bottom: 0, left: 0, right: 0}}>
+            <footer style={{ bottom: 0, left: 0, right: 0 }}>
                 <Footer />
             </footer>
         </>
