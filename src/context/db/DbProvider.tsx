@@ -16,6 +16,7 @@ const Db_INITIAL_STATE: DbState = {
             titulo: "",
             precio: "",
             imagen: "",
+            imagenes:[''],
             descripcion: "",
             categoria: "",
             slug:""
@@ -39,6 +40,7 @@ const DbProvider: FC<PropsWithChildren> = ({ children }) => {
                 titulo: productData.titulo,
                 precio: productData.precio,
                 imagen: productData.imagen,
+                imagenes:productData.imagenes,
                 descripcion: productData.descripcion,
                 categoria: productData.categoria,
                 slug:productData.slug

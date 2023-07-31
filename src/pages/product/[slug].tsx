@@ -11,6 +11,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import NextLink from 'next/link';
 import LocalShippingRoundedIcon from '@mui/icons-material/LocalShippingRounded';
 import getProductBySlug from '@/utils/getProductBySlug'
+import Slider from '@/components/ui/Slider/Slider'
 
 
 
@@ -23,8 +24,7 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
     const { products } = useContext(DbContext)
     const product = products.filter(product => product.slug == `${slug}`)
 
-
-
+    
 
 
     return (
@@ -43,14 +43,9 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
 
                 {product.map(producto =>
                     <Grid sx={{ display: 'flex', flexDirection: { xs: 'column', sm: "column", md: "row" } }} p={5} key={producto.titulo}>
-                        <Card key={producto.titulo}>
-                            <CardMedia
-                                component="img"
-                                sx={{ maxHeight: 600 }}
-                                image={`${producto.imagen}`}
-                            >
-                            </CardMedia>
-                        </Card>
+                        <Grid key={producto.titulo} sx={{maxWidth:600}}>
+                            <Slider images={producto.imagenes}/>
+                        </Grid>
                         <Box ml={4} maxWidth={600} sx={{mt:{xs: 3, sm:3, md:0}}}>
                             <Box>
                                 <Typography component="h2" variant='h4' color="primary">{producto.titulo}</Typography>

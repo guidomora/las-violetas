@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import { Slide } from 'react-slideshow-image'
+import styles from "./Slider.module.css"
+import 'react-slideshow-image/dist/styles.css'
 
 
 interface Props {
@@ -9,19 +11,21 @@ interface Props {
 
 
 const Slider:FC<Props> = ({images}) => {
+
+
     return (
       <Slide
       easing='ease'
-      duration={700}
+      duration={3000}
       indicators
       >
-          {images.map(image => {
-              const url = `/products/${image}`
+          {images.map(products => {
+              const url = `${products}`
               return(
-                  <div className='each-slide' key={image}>
+                  <div className={styles['each-slide']} key={products}>
                       <div style={{
                           backgroundImage:`url(${url})`,
-                          backgroundSize: "cover"
+                          backgroundSize:"cover",
                       }}>
                       </div>
                   </div>

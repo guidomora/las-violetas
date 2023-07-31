@@ -10,7 +10,6 @@ const Destacados = () => {
     const [isLoading, setIsLoading] = useState(false)
     const { products } = useContext(DbContext)
 
-    console.log(products.length);
     
     useEffect(() => {
        products.length === 1 ? setIsLoading(true) : setIsLoading(false)
