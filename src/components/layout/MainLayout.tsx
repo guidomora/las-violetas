@@ -11,10 +11,11 @@ import NextLink from "next/link"
 interface Props {
     title: string;
     pageDescription: string;
+    imageFullUrl: string;
     children: ReactNode
 }
 
-const MainLayout: FC<Props> = ({ title, pageDescription, children }) => {
+const MainLayout: FC<Props> = ({ title, pageDescription, children, imageFullUrl }) => {
     return (
         <>
             <Head>
@@ -25,7 +26,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children }) => {
                 <meta name="description" content={pageDescription} />
                 <meta name="og:title" content={title} />
                 <meta name="og:description" content={pageDescription} />
-                <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/segunda-floreria.appspot.com/o/newPortada.png?alt=media&token=26361baf-5527-4eed-9864-eb86328a2989"/>
+                <meta property="og:image" content={imageFullUrl}/>
             </Head>
             <NavBar />
             <SideBar />

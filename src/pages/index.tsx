@@ -14,7 +14,8 @@ export default function Home() {
 
   return (
     <>
-      <MainLayout title={'Floreria Las Violetas'} pageDescription={'especialistas en coronas de flores, calidad premium y la mejor atencion'}>
+      <MainLayout title={'Floreria Las Violetas'} pageDescription={'especialistas en coronas de flores, calidad premium y la mejor atencion'} 
+      imageFullUrl={'https://firebasestorage.googleapis.com/v0/b/segunda-floreria.appspot.com/o/newPortada.png?alt=media&token=26361baf-5527-4eed-9864-eb86328a2989'}>
         <Portada />
         <Box>
           <Nosotros />
