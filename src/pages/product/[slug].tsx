@@ -31,7 +31,7 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
     
 
     return (
-        <MainLayout title={`${title}`} pageDescription={`${description}`} imageFullUrl={`${img}`}>
+        <MainLayout title={`${title}`} pageDescription={`${description}`}>
             <Grid pt={9}>
                 {product.map(producto =>
                     <Button sx={{ml:5, textTransform:"none", fontSize:20}} variant="outlined" key={producto.titulo}>
