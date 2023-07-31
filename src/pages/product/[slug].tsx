@@ -27,7 +27,7 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
 
     const title = product.map(title => title.titulo)
     const description = product.map(description => description.descripcion)
-    const img = product.map(image => image.imagen)
+
     
 
     return (

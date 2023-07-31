@@ -22,7 +22,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children, imageFullUrl 
                 <title>{title || "Las violetas"}</title>
                 <meta name='author' content='Guido Morabito' />
                 <meta name='description' content={` ${pageDescription}`} />
-                <meta name='keywords' content={`${title}, coronas, consolencias`} />
+                <meta name='keywords' content={`${title}, coronas, condolencias, floreria en caba, velatorios, envio`} />
                 <meta name="description" content={pageDescription} />
                 <meta name="og:title" content={title} />
                 <meta name="og:description" content={pageDescription} />
