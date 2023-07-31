@@ -3,4 +3,4 @@ npm install @fontsource/roboto
 npm install @mui/icons-material
 npm install react-slideshow-image -S
 npm install firebase
-npm i firebase-admin
+npm install animate.css --save

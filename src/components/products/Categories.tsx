@@ -33,7 +33,7 @@ const Categories = ({ categoria, title }: Props) => {
                 categories.map(product => (
                     <Box key={product.slug} ml={4} mr={4}>
                         <Typography textAlign="center" color="black" fontSize={22} fontWeight={600}>{product.titulo}</Typography>
-                        <Card sx={{ margin: 3 }} className='card-article'>
+                        <Card sx={{ margin: 3 }} className='card-article animate__animated animate__fadeIn'>
                             <NextLink legacyBehavior href={`/product/${product.slug}`} passHref>
                                 <Link sx={{ textDecoration: "none" }}>
                                     <CardActionArea>
@@ -42,6 +42,7 @@ const Categories = ({ categoria, title }: Props) => {
                                             sx={{ borderTopRightRadius: 7, borderTopLeftRadius: 7, minWidth: {xs:300, sm:350} }}
                                             component="img"
                                             image={product.imagen}
+                                            className='animate__animated animate__fadeIn'
                                         >
                                         </CardMedia>
                                     </CardActionArea>

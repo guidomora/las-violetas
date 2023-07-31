@@ -42,7 +42,8 @@ const ProductPage: NextPage<Props> = ({ slug }) => {
                 )}
 
                 {product.map(producto =>
-                    <Grid sx={{ display: 'flex', flexDirection: { xs: 'column', sm: "column", md: "row" } }} p={5} key={producto.titulo}>
+                    <Grid sx={{ display: 'flex', flexDirection: { xs: 'column', sm: "column", md: "row" } }}
+                     p={5} key={producto.titulo} className='animate__animated animate__fadeIn'>
                         <Grid key={producto.titulo} sx={{maxWidth:600}}>
                             <Slider images={producto.imagenes}/>
                         </Grid>

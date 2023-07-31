@@ -32,15 +32,19 @@ const NavBar = () => {
           </Box>
           <Box flex={1} />
           <Box display={'flex'} justifyContent={'center'}>
-            <Typography component="h1" variant='h4' color="primary"
-            sx={{fontSize:{xs:23, sm:35}}}>Las Violetas</Typography>
+            <NextLink legacyBehavior passHref href="/">
+              <Link sx={{textDecoration: "none"}}>
+                <Typography component="h1" variant='h4' color="primary"
+                  sx={{ fontSize: { xs: 23, sm: 35 } }}>Las Violetas</Typography>
+              </Link>
+            </NextLink>
           </Box>
           <Box flex={1} />
           <Box>
             <Button>
               <NextLink legacyBehavior href={"https://wa.me/541169402036"} passHref>
-                <Link target="blank" sx={{display: 'flex', alignItems: 'center'}}>
-                  <WhatsAppIcon fontSize="large" color='primary'/>
+                <Link target="blank" sx={{ display: 'flex', alignItems: 'center' }}>
+                  <WhatsAppIcon fontSize="large" color='primary' />
                 </Link>
               </NextLink>
             </Button>
