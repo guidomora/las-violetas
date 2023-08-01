@@ -31,6 +31,7 @@ const SideBar = () => {
             </Box>
             <List sx={{ backgroundColor: "secondary.main" }}>
                 <ListItem component={"button"}
+                    className='btn-menu'
                     onClick={() => NavigateTo("/")}
                     sx={{
                         backgroundColor: "inherit",
@@ -42,6 +43,7 @@ const SideBar = () => {
                 </ListItem>
                 <Divider />
                 <ListItem component={"button"}
+                    className='btn-menu'
                     onClick={() => NavigateTo("/categorias/coronas")}
                     sx={{
                         backgroundColor: "inherit",
@@ -53,6 +55,7 @@ const SideBar = () => {
                 </ListItem>
                 <Divider />
                 <ListItem component={"button"}
+                    className='btn-menu'
                     onClick={() => NavigateTo("/categorias/bouquets")}
                     sx={{
                         backgroundColor: "inherit",
@@ -64,6 +67,7 @@ const SideBar = () => {
                 </ListItem>
                 <Divider />
                 <ListItem component={"button"}
+                    className='btn-menu'
                     onClick={() => NavigateTo("/categorias/arreglos")}
                     sx={{
                         backgroundColor: "inherit",
@@ -73,8 +77,8 @@ const SideBar = () => {
                     }}>
                     <ListItemText>Otros Arreglos</ListItemText>
                 </ListItem>
-            </List>
             <Divider />
+            </List>
         </Drawer>
     )
 }

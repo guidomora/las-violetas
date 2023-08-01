@@ -16,8 +16,13 @@
     height: 650px;
 }
 
+.css-9mgopn-MuiDivider-root {
+  background-color: #e9ecef !important; 
+}
+
 .css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-    background-color: #e9ecef !important; 
+    background-color: #e9ecef !important;
+    color: #e9ecef !important; 
 }
 
 main {
@@ -77,3 +82,13 @@ main {
       opacity: 0;
     }
   }
+
+
+.btn-menu {
+  transition: box-shadow 0.2s ease; 
+}
+
+
+.btn-menu:hover {
+  box-shadow: 1px 1px 6px #3a0ca3; 
+}
