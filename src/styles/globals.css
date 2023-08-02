@@ -16,14 +16,13 @@
     height: 650px;
 }
 
-.css-9mgopn-MuiDivider-root {
-  background-color: #e9ecef !important; 
+
+
+.MuiDrawer-paper {
+  background-color: #e9ecef !important;
+  color: #e9ecef !important;
 }
 
-.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
-    background-color: #e9ecef !important;
-    color: #e9ecef !important; 
-}
 
 main {
     min-height: calc(100vh - 100px);
