@@ -19,7 +19,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children, imageFullUrl 
     return (
         <>
             <Head>
-                <title>{title || "Las violetas"}</title>
+                <title>{"Floreria las violetas"}</title>
                 <meta name='author' content='Guido Morabito' />
                 <meta name='description' content={` ${pageDescription}`} />
                 <meta name='keywords' content={`${title}, coronas, condolencias, floreria en caba, velatorios, envio`} />
