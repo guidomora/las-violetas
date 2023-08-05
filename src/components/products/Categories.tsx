@@ -43,6 +43,7 @@ const Categories = ({ categoria, title }: Props) => {
                                             component="img"
                                             image={product.imagen}
                                             className='animate__animated animate__fadeIn'
+                                            alt={`${product.titulo}`}
                                         >
                                         </CardMedia>
                                     </CardActionArea>
