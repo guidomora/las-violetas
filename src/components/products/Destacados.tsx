@@ -33,6 +33,7 @@ const Destacados = () => {
                                             component="img"
                                             image={product.imagen}
                                             className='animate__animated animate__fadeIn'
+                                            alt={`${product.titulo}`}
                                         >
                                         </CardMedia>
                                     </CardActionArea>
