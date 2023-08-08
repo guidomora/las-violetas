@@ -10,7 +10,6 @@ export default function Document() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       />
-      <meta name="google-site-verification" content="potESRcaz_yBl-4B3J-mr_sumF13UKPWAaxuF9Di9Oc" />
       <Head />
       <body>
         <Main />

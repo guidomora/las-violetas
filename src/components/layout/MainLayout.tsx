@@ -27,6 +27,7 @@ const MainLayout: FC<Props> = ({ title, pageDescription, children, imageFullUrl 
                 <meta name="og:title" content={title} />
                 <meta name="og:description" content={pageDescription} />
                 <meta property="og:image" content={imageFullUrl}/>
+                <meta name="google-site-verification" content="potESRcaz_yBl-4B3J-mr_sumF13UKPWAaxuF9Di9Oc" />
             </Head>
             <NavBar />
             <SideBar />
